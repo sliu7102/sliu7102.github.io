@@ -11,28 +11,30 @@
 
   <style type="text/css">
     body {
+      background-color: #f2f2f2;
+      font-family: "Helvetica Neue", Helvetica, Arial, "Microsoft YaHei", sans-serif;
       margin: 0;
       padding: 0;
-      font-family: "Helvetica Neue", Helvetica, Arial, "Microsoft YaHei", sans-serif;
-      background-color: #f2f2f2;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
 
-    /* 顶部全宽导航栏 */
+    /* 顶部导航栏 */
     .navbar {
       width: 100%;
-      background: #ffffff;
-      border-bottom: 1px solid #ddd;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+      background: rgba(255, 255, 255, 0.9);
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
       text-align: center;
-      padding: 14px 0;
+      padding: 12px 0;
       position: sticky;
       top: 0;
-      z-index: 999;
+      z-index: 100;
     }
 
     .navbar a {
       display: inline-block;
-      margin: 0 20px;
+      margin: 0 18px;
       padding: 8px 20px;
       text-decoration: none;
       color: #333;
@@ -51,43 +53,58 @@
       color: #fff;
     }
 
-    /* 页面主体容器：白底、居中、宽度可响应 */
-    .content-container {
-      max-width: 210mm; /* 接近A4宽 */
-      width: 80%;
-      min-width: 700px;
-      margin: 40px auto;
-      background: #fff;
+    /* A4宽度的居中内容卡片 */
+    .content-wrapper {
+      width: 480;
+      max-width: 100%;
+      display: flex;
+      justify-content: center;
+    }
+
+    .content-card {
+      background-color: #fff;
+      margin: 30px 0;
+      padding: 30px 40px;
+      width: 100%;
       border-radius: 10px;
-      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
-      padding: 40px 60px;
+      box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
     }
 
     .lang { display: none; }
     .lang.active { display: block; }
 
-    h1, h2, h3 { color: #222; }
-    p { line-height: 1.7em; color: #444; }
-    table { width: 100%; }
+    h1, h2, h3 {
+      color: #222;
+    }
+
+    p {
+      line-height: 1.7em;
+      color: #444;
+    }
+
+    table {
+      width: 100%;
+    }
   </style>
 </head>
 
 <body>
-  <!-- 顶部导航 -->
+  <!-- 顶部导航栏 -->
   <div class="navbar">
     <a href="#zh" id="btn-zh">中文主页</a>
     <a href="#en" id="btn-en">English Home</a>
   </div>
 
-  <!-- 主体内容容器 -->
-  <div class="content-container">
-    <!-- 中文主页 -->
-    <div id="panel-zh" class="lang active" lang="zh-CN">
+  <!-- 页面内容区 -->
+  <div class="content-wrapper">
+    <div id="panel-zh" class="lang content-card" lang="zh-CN">
       <table>
         <tbody>
           <tr>
             <td width="670">
-              <h1>刘莘 &nbsp; &nbsp; Shen Liu</h1>
+              <div id="toptitle">
+                <h1>刘莘 &nbsp; &nbsp; Shen Liu</h1>
+              </div>
               <h3>博士研究生</h3>
               <p>
                 中国陕西省西安市碑林区咸宁西路28号，邮编：710049<br /><br />
@@ -127,13 +144,14 @@
       <p>2. 2024年08月 ～ 至今：意大利米兰理工大学 <a href="http://lasar.cesnef.polimi.it/" target="_blank">LASAR 实验室</a> 访问学习，合作导师为 <a href="https://cv.hal.science/enrico-zio" target="_blank">Enrico Zio 教授</a>。</p>
     </div>
 
-    <!-- 英文主页 -->
-    <div id="panel-en" class="lang" lang="en">
+    <div id="panel-en" class="lang content-card" lang="en">
       <table>
         <tbody>
           <tr>
             <td width="670">
-              <h1>Shen Liu &nbsp; &nbsp; 刘莘</h1>
+              <div id="toptitle">
+                <h1>Shen Liu &nbsp; &nbsp; 刘莘</h1>
+              </div>
               <h3>Ph.D Student</h3>
               <p>
                 No 28 Xianning West Road, Beilin District, Xi'an Shaanxi, P.R.China, 710049<br /><br />
@@ -175,7 +193,7 @@
     </div>
   </div>
 
-  <!-- 语言切换脚本 -->
+  <!-- 切换语言脚本 -->
   <script type="text/javascript">
     (function() {
       function setActive(lang) {
