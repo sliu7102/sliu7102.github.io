@@ -9,7 +9,30 @@
   <link rel="stylesheet" href="./css/jemdoc.css" type="text/css" />
   <title>Shen Liu</title>
 
-  <!-- Google Analytics (preserved as original functionality) -->
+  <!-- 顶部浮动菜单的简洁样式 -->
+  <style type="text/css">
+    body { margin:0; }
+    .navbar {
+      position: sticky; top: 0; z-index: 999;
+      width: 100%;
+      background: #fff;
+      border-bottom: 1px solid #e9e9e9;
+      padding: 10px 0; text-align: center;
+    }
+    .navbar a {
+      display:inline-block; margin:0 14px; padding:6px 14px;
+      text-decoration:none; color:#333; border-radius:6px;
+      transition: .2s ease-in-out;
+    }
+    .navbar a:hover, .navbar a.active { background:#333; color:#fff; }
+    /* 多语言切换容器：仅显示激活面板 */
+    .lang { display:none; }
+    .lang.active { display:block; }
+    /* 与原内联margin兼容 */
+    #layout-content { margin-top:15px; }
+  </style>
+
+  <!-- Google Analytics (保留原功能) -->
   <script type="text/javascript">
     var _gaq=_gaq||[];
     _gaq.push(['_setAccount','UA-39824124-1']);
@@ -23,54 +46,122 @@
 </head>
 
 <body>
-  <div id="layout-content" style="margin-top:15px">
-    <table>
-      <tbody>
-        <tr>
-          <td width="670">
-            <div id="toptitle">
-              <h1>Shen Liu &nbsp;&nbsp; 刘莘</h1>
-            </div>
-            <h3>Ph.D Student</h3>
-            <p>
-              No 28 Xianning West Road, Beilin District, Xi'an Shaanxi, P.R.China, 710049<br /><br />
-              <a href="http://iafe.xjtu.edu.cn/en/" target="_blank">School of Mechanical Engineering</a><br />
-              <a href="http://en.xjtu.edu.cn/" target="_blank">Xi'an Jiaotong University</a><br />
-              Email:
-              <a href="mailto:sliu7102@163.com" target="_blank">sliu7102@163.com</a>
-              &nbsp;&nbsp;
-              <a href="mailto:lx3268181@stu.xjtu.edu.cn" target="_blank">lx3268181@stu.xjtu.edu.cn</a>
-              <br /><br />
-              [<a href="https://www.zhihu.com/people/shenliu7/" target="_blank">知乎</a>]
-              &nbsp;&nbsp;
-              [<a href="https://scholar.google.com/citations?hl=en&user=qKOUAFYAAAAJ" target="_blank">Google Scholar</a>]
-              &nbsp;&nbsp;
-              [<a href="https://www.researchgate.net/profile/Shen-Liu-21" target="_blank">ResearchGate</a>]
-              &nbsp;&nbsp;
-              [<a href="https://orcid.org/my-orcid?orcid=0000-0001-6183-1789" target="_blank">ORCID</a>]
-            </p>
-          </td>
-          <td>
-            <div style="float:right">
-              <img src="/images/sl_scyt.jpg" width="150" alt="Shen Liu portrait" />
-            </div>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-
-    <h2>Biography</h2>
-    <p>
-      I am currently a Ph.D. student with the
-      <a href="http://mec.xjtu.edu.cn/" target="_blank">School of Mechanical Engineering</a>,
-      <a href="https://www.xjtu.edu.cn/" target="_blank">Xi'an Jiaotong University</a>, China, where I obtained my bachelor degree.
-      My research interest mainly lies in <em>Prognostics and Health Management (PHM)</em>, <em>Deep Learning (DL)</em>,
-      <em>Fault Diagnosis (FD)</em>, and <em>Anomaly Detection (AD)</em>. I have been a reviewer for ISA Transactions,
-      Measurement Science and Technology, and other journals.
-    </p>
-
-    <p>1. 2020.09 ~ Present. Studying under the supervision of <a href="https://scholar.google.com.hk/citations?hl=en&user=wEGyDvkAAAAJ" target="_blank">Prof. Jinglong Chen</a> in Xi'an Jiaotong University (XJTU).</p>
-    <p>2. 2024.08 ~ Present. Visiting studying in the <a href="http://lasar.cesnef.polimi.it/" target="_blank">LASAR lab</a> of Politecnico di Milano, Italy, advised by <a href="https://cv.hal.science/enrico-zio" target="_blank">Prof. Enrico Zio</a>.</p>
+  <!-- 浮动菜单栏：中文主页 / English Home -->
+  <div class="navbar" role="navigation" aria-label="Language Switcher">
+    <a href="#zh" id="btn-zh">中文主页</a>
+    <a href="#en" id="btn-en" class="active">English Home</a>
   </div>
+
+  <!-- ============ 中文主页 ============ -->
+  <div id="panel-zh" class="lang" lang="zh-CN">
+    <div id="layout-content">
+      <table><tbody><tr>
+        <td width="670">
+          <div id="toptitle"><h1>刘莘 &nbsp;&nbsp; Shen Liu</h1></div>
+          <h3>博士研究生</h3>
+          <p>
+            中国陕西省西安市碑林区咸宁西路28号，邮编：710049<br /><br />
+            <a href="http://iafe.xjtu.edu.cn/en/" target="_blank">机械工程学院</a><br />
+            <a href="http://en.xjtu.edu.cn/" target="_blank">西安交通大学</a><br />
+            邮箱：
+            <a href="mailto:sliu7102@163.com" target="_blank">sliu7102@163.com</a>
+            &nbsp;&nbsp;
+            <a href="mailto:lx3268181@stu.xjtu.edu.cn" target="_blank">lx3268181@stu.xjtu.edu.cn</a>
+            <br /><br />
+            [<a href="https://www.zhihu.com/people/shenliu7/" target="_blank">知乎</a>]
+            &nbsp;&nbsp;
+            [<a href="https://scholar.google.com/citations?hl=en&amp;user=qKOUAFYAAAAJ" target="_blank">Google Scholar</a>]
+            &nbsp;&nbsp;
+            [<a href="https://www.researchgate.net/profile/Shen-Liu-21" target="_blank">ResearchGate</a>]
+            &nbsp;&nbsp;
+            [<a href="https://orcid.org/my-orcid?orcid=0000-0001-6183-1789" target="_blank">ORCID</a>]
+          </p>
+        </td>
+        <td><div style="float:right"><img src="/images/sl_scyt.jpg" width="150" alt="Shen Liu portrait" /></div></td>
+      </tr></tbody></table>
+
+      <h2>个人简介</h2>
+      <p>
+        我目前在中国 <a href="https://www.xjtu.edu.cn/" target="_blank">西安交通大学</a>
+        <a href="http://mec.xjtu.edu.cn/" target="_blank">机械工程学院</a> 攻读博士学位（本科亦毕业于此）。
+        研究兴趣主要包括 <em>健康监测与预测（PHM）</em>、<em>深度学习（DL）</em>、<em>故障诊断（FD）</em> 与
+        <em>异常检测（AD）</em>。曾担任 ISA Transactions、Measurement Science and Technology 等期刊审稿人。
+      </p>
+      <p>1. 2020年09月 ～ 至今：在西安交通大学随 <a href="https://scholar.google.com.hk/citations?hl=en&amp;user=wEGyDvkAAAAJ" target="_blank">陈景龙</a> 教授攻读博士学位。</p>
+      <p>2. 2024年08月 ～ 至今：意大利米兰理工大学 <a href="http://lasar.cesnef.polimi.it/" target="_blank">LASAR 实验室</a> 访问学习，合作导师为 <a href="https://cv.hal.science/enrico-zio" target="_blank">Enrico Zio 教授</a>。</p>
+    </div>
+  </div>
+
+  <!-- ============ English Home (原始内容) ============ -->
+  <div id="panel-en" class="lang active" lang="en">
+    <div id="layout-content">
+      <table><tbody><tr>
+        <td width="670">
+          <div id="toptitle"><h1>Shen Liu &nbsp;&nbsp; 刘莘</h1></div>
+          <h3>Ph.D Student</h3>
+          <p>
+            No 28 Xianning West Road, Beilin District, Xi'an Shaanxi, P.R.China, 710049<br /><br />
+            <a href="http://iafe.xjtu.edu.cn/en/" target="_blank">School of Mechanical Engineering</a><br />
+            <a href="http://en.xjtu.edu.cn/" target="_blank">Xi'an Jiaotong University</a><br />
+            Email:
+            <a href="mailto:sliu7102@163.com" target="_blank">sliu7102@163.com</a>
+            &nbsp;&nbsp;
+            <a href="mailto:lx3268181@stu.xjtu.edu.cn" target="_blank">lx3268181@stu.xjtu.edu.cn</a>
+            <br /><br />
+            [<a href="https://www.zhihu.com/people/shenliu7/" target="_blank">Zhihu</a>]
+            &nbsp;&nbsp;
+            [<a href="https://scholar.google.com/citations?hl=en&amp;user=qKOUAFYAAAAJ" target="_blank">Google Scholar</a>]
+            &nbsp;&nbsp;
+            [<a href="https://www.researchgate.net/profile/Shen-Liu-21" target="_blank">ResearchGate</a>]
+            &nbsp;&nbsp;
+            [<a href="https://orcid.org/my-orcid?orcid=0000-0001-6183-1789" target="_blank">ORCID</a>]
+          </p>
+        </td>
+        <td><div style="float:right"><img src="/images/sl_scyt.jpg" width="150" alt="Shen Liu portrait" /></div></td>
+      </tr></tbody></table>
+
+      <h2>Biography</h2>
+      <p>
+        I am currently a Ph.D. student with the
+        <a href="http://mec.xjtu.edu.cn/" target="_blank">School of Mechanical Engineering</a>,
+        <a href="https://www.xjtu.edu.cn/" target="_blank">Xi'an Jiaotong University</a>, China, where I obtained my bachelor degree.
+        My research interest mainly lies in <em>Prognostics and Health Management (PHM)</em>, <em>Deep Learning (DL)</em>,
+        <em>Fault Diagnosis (FD)</em>, and <em>Anomaly Detection (AD)</em>. I have been a reviewer for ISA Transactions,
+        Measurement Science and Technology, and other journals.
+      </p>
+      <p>1. 2020.09 ~ Present. Studying under the supervision of <a href="https://scholar.google.com.hk/citations?hl=en&amp;user=wEGyDvkAAAAJ" target="_blank">Prof. Jinglong Chen</a> in Xi'an Jiaotong University (XJTU).</p>
+      <p>2. 2024.08 ~ Present. Visiting studying in the <a href="http://lasar.cesnef.polimi.it/" target="_blank">LASAR lab</a> of Politecnico di Milano, Italy, advised by <a href="https://cv.hal.science/enrico-zio" target="_blank">Prof. Enrico Zio</a>.</p>
+    </div>
+  </div>
+
+  <!-- 语言切换脚本：无刷新显示/隐藏 -->
+  <script type="text/javascript">
+    (function(){
+      var zhBtn=document.getElementById('btn-zh');
+      var enBtn=document.getElementById('btn-en');
+      var zh=document.getElementById('panel-zh');
+      var en=document.getElementById('panel-en');
+
+      function setActive(lang){
+        if(lang==='zh'){
+          zh.className='lang active'; en.className='lang';
+          zhBtn.className='active';   enBtn.className='';
+          location.hash='#zh';
+        }else{
+          en.className='lang active'; zh.className='lang';
+          enBtn.className='active';   zhBtn.className='';
+          location.hash='#en';
+        }
+      }
+      function init(){
+        var h=(location.hash||'#en').toLowerCase();
+        setActive(h==='#zh'?'zh':'en');
+      }
+      if(zhBtn) zhBtn.onclick=function(e){ e.preventDefault(); setActive('zh'); };
+      if(enBtn) enBtn.onclick=function(e){ e.preventDefault(); setActive('en'); };
+      init();
+      if('onhashchange' in window) window.onhashchange=init;
+    })();
+  </script>
 </body>
 </html>
