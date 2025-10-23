@@ -1,15 +1,32 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" class="cye-nm">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh" class="cye-nm">
+
+<style>
+  /* 顶部浮动栏（独立命名，避免与现有样式冲突） */
+  #sl-topbar{
+    position:fixed; top:0; left:0; right:0; height:44px;
+    background:#fff; border-bottom:1px solid #eaeaea;
+    display:flex; align-items:center; justify-content:center;
+    z-index:9999;
+  }
+  #sl-topbar a{
+    margin:0 10px; padding:6px 12px; font-size:14px;
+    color:#333; text-decoration:none; border-radius:6px;
+    transition:all .2s ease;
+  }
+  #sl-topbar a:hover{ background:#333; color:#fff; }
+</style>
+
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
   <link rel="shortcut icon" href="./images/sl_scyt.jpg" />
-  <meta name="keywords" content="Shen Liu" />
-  <meta name="description" content="Shen Liu&#39;s home page." />
+  <meta name="keywords" content="刘莘" />
+  <meta name="description" content="刘莘个人主页" />
   <meta name="360-site-verification" content="d423d8da2550ca5def68c898ec0f4a36" />
   <link rel="stylesheet" href="./css/jemdoc.css" type="text/css" />
-  <title>Shen Liu</title>
+  <title>刘莘</title>
 
-  <!-- Google Analytics (preserved) -->
+  <!-- Google Analytics (保持原有功能) -->
   <script type="text/javascript">
     var _gaq=_gaq||[];
     _gaq.push(['_setAccount','UA-39824124-1']);
@@ -20,160 +37,88 @@
       var s=document.getElementsByTagName('script')[0];s.parentNode.insertBefore(ga,s);
     })();
   </script>
-
-  <style type="text/css">
-    /* 浮动顶栏（最小样式，不影响原有 jemdoc.css） */
-    .topbar{
-      position:fixed; top:0; left:0; right:0; z-index:9999;
-      height:48px; display:flex; align-items:center; justify-content:flex-end;
-      padding:0 16px; background:#fff; border-bottom:1px solid #e9e9e9;
-    }
-    .lang-btn{
-      border:1px solid #ccc; background:#fff; padding:6px 14px; border-radius:6px;
-      cursor:pointer; font-size:14px;
-    }
-    /* 为避免被顶栏遮挡，给主体加上顶边距 */
-    body{ margin:0; }
-    #layout-content{ margin-top:63px; } /* 48px + 一点间距 */
-  </style>
 </head>
 
 <body>
-  <!-- 浮动菜单栏 + 语言切换按钮（默认 EN） -->
-  <div class="topbar">
-    <button id="langToggle" class="lang-btn" aria-label="toggle language">EN</button>
+  <div id="sl-topbar">
+    <a href="#" id="sl-goto-en">English</a>
+    <a href="./index_zh.html">中文主页</a>
+  </div>
+  <!-- 占位器，避免 fixed 顶栏遮住正文 -->
+  <div style="height:44px"></div>
+
+  <div id="layout-content" style="margin-top:15px">
+    <table>
+      <tbody>
+        <tr>
+          <td width="670">
+            <div id="toptitle">
+              <h1>刘莘 &nbsp;&nbsp; Shen Liu</h1>
+            </div>
+            <h3>博士研究生</h3>
+            <p>
+              中国陕西省西安市碑林区咸宁西路28号，邮编：710049<br /><br />
+              <a href="http://iafe.xjtu.edu.cn/en/" target="_blank">机械工程学院</a><br />
+              <a href="http://en.xjtu.edu.cn/" target="_blank">西安交通大学</a><br />
+              邮箱：
+              <a href="mailto:sliu7102@163.com" target="_blank">sliu7102@163.com</a>
+              &nbsp;&nbsp;
+              <a href="mailto:lx3268181@stu.xjtu.edu.cn" target="_blank">lx3268181@stu.xjtu.edu.cn</a>
+              <br /><br />
+              [<a href="https://www.zhihu.com/people/shenliu7/" target="_blank">知乎</a>]
+              &nbsp;&nbsp;
+              [<a href="https://scholar.google.com/citations?hl=en&user=qKOUAFYAAAAJ" target="_blank">Google Scholar</a>]
+              &nbsp;&nbsp;
+              [<a href="https://www.researchgate.net/profile/Shen-Liu-21" target="_blank">ResearchGate</a>]
+              &nbsp;&nbsp;
+              [<a href="https://orcid.org/my-orcid?orcid=0000-0001-6183-1789" target="_blank">ORCID</a>]
+            </p>
+          </td>
+          <td>
+            <div style="float:right">
+              <img src="/images/sl_scyt.jpg" width="150" alt="刘莘照片" />
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>个人简介</h2>
+    <p>
+      我目前在中国 <a href="https://www.xjtu.edu.cn/" target="_blank">西安交通大学</a>
+      <a href="http://mec.xjtu.edu.cn/" target="_blank">机械工程学院</a> 攻读博士学位（本科亦毕业于此）。
+      我的研究兴趣主要包括 <em>健康监测与预测（PHM）</em>、<em>深度学习（DL）</em>、
+      <em>故障诊断（FD）</em> 与 <em>异常检测（AD）</em>。我曾担任 ISA Transactions、
+      Measurement Science and Technology 等学术期刊的审稿人。
+    </p>
+
+    <p>
+      1. 2020年09月至今：在西安交通大学随
+      <a href="https://scholar.google.com.hk/citations?hl=en&user=wEGyDvkAAAAJ" target="_blank">陈景龙</a>
+      教授攻读博士学位。
+    </p>
+    <p>
+      2. 2024年08月至今：在意大利米兰理工大学
+      <a href="http://lasar.cesnef.polimi.it/" target="_blank">LASAR 实验室</a>
+      进行访问研究，合作导师为
+      <a href="https://cv.hal.science/enrico-zio" target="_blank">Enrico Zio 教授</a>。
+    </p>
   </div>
 
-  <div id="layout-content">
-    <!-- 英文版本（默认显示） -->
-    <div id="panel-en">
-      <table>
-        <tbody>
-          <tr>
-            <td width="3200">
-              <div id="toptitle"><h1>Shen Liu &nbsp;&nbsp; 刘莘</h1></div>
-              <h3>Ph.D Student</h3>
-              <p>
-                No 28 Xianning West Road, Beilin District, Xi'an Shaanxi, P.R.China, 710049<br /><br />
-                <a href="http://iafe.xjtu.edu.cn/en/" target="_blank">School of Mechanical Engineering</a><br />
-                <a href="http://en.xjtu.edu.cn/" target="_blank">Xi'an Jiaotong University</a><br />
-                Email:
-                <a href="mailto:sliu7102@163.com" target="_blank">sliu7102@163.com</a>
-                &nbsp;&nbsp;
-                <a href="mailto:lx3268181@stu.xjtu.edu.cn" target="_blank">lx3268181@stu.xjtu.edu.cn</a>
-                <br /><br />
-                [<a href="https://www.zhihu.com/people/shenliu7/" target="_blank">Zhihu</a>]
-                &nbsp;&nbsp;
-                [<a href="https://scholar.google.com/citations?hl=en&user=qKOUAFYAAAAJ" target="_blank">Google Scholar</a>]
-                &nbsp;&nbsp;
-                [<a href="https://www.researchgate.net/profile/Shen-Liu-21" target="_blank">ResearchGate</a>]
-                &nbsp;&nbsp;
-                [<a href="https://orcid.org/my-orcid?orcid=0000-0001-6183-1789" target="_blank">ORCID</a>]
-              </p>
-            </td>
-            <td>
-              <div style="float:right">
-                <img src="/images/sl_scyt.jpg" width="150" alt="Shen Liu portrait" />
-              </div>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-
-      <h2>Biography</h2>
-      <p>
-        I am currently a Ph.D. student with the
-        <a href="http://mec.xjtu.edu.cn/" target="_blank">School of Mechanical Engineering</a>,
-        <a href="https://www.xjtu.edu.cn/" target="_blank">Xi'an Jiaotong University</a>, China, where I obtained my bachelor degree.
-        My research interest mainly lies in <em>Prognostics and Health Management (PHM)</em>, <em>Deep Learning (DL)</em>,
-        <em>Fault Diagnosis (FD)</em>, and <em>Anomaly Detection (AD)</em>. I have been a reviewer for ISA Transactions,
-        Measurement Science and Technology, and other journals.
-      </p>
-
-      <p>1. 2020.09 ~ Present. Studying under the supervision of <a href="https://scholar.google.com.hk/citations?hl=en&user=wEGyDvkAAAAJ" target="_blank">Prof. Jinglong Chen</a> in Xi'an Jiaotong University (XJTU).</p>
-      <p>2. 2024.08 ~ Present. Visiting studying in the <a href="http://lasar.cesnef.polimi.it/" target="_blank">LASAR lab</a> of Politecnico di Milano, Italy, advised by <a href="https://cv.hal.science/enrico-zio" target="_blank">Prof. Enrico Zio</a>.</p>
-    </div>
-
-    <!-- 中文版本（内容与英文一致，仅翻译，不改变结构） -->
-    <div id="panel-zh" style="display:none">
-      <table>
-        <tbody>
-          <tr>
-            <td width="3200">
-              <div id="toptitle"><h1>刘莘 &nbsp;&nbsp; Shen Liu</h1></div>
-              <h3>博士研究生</h3>
-              <p>
-                中国陕西省西安市碑林区咸宁西路28号，邮编：710049<br /><br />
-                <a href="http://iafe.xjtu.edu.cn/en/" target="_blank">机械工程学院</a><br />
-                <a href="http://en.xjtu.edu.cn/" target="_blank">西安交通大学</a><br />
-                邮箱：
-                <a href="mailto:sliu7102@163.com" target="_blank">sliu7102@163.com</a>
-                &nbsp;&nbsp;
-                <a href="mailto:lx3268181@stu.xjtu.edu.cn" target="_blank">lx3268181@stu.xjtu.edu.cn</a>
-                <br /><br />
-                [<a href="https://www.zhihu.com/people/shenliu7/" target="_blank">知乎</a>]
-                &nbsp;&nbsp;
-                [<a href="https://scholar.google.com/citations?hl=en&user=qKOUAFYAAAAJ" target="_blank">Google Scholar</a>]
-                &nbsp;&nbsp;
-                [<a href="https://www.researchgate.net/profile/Shen-Liu-21" target="_blank">ResearchGate</a>]
-                &nbsp;&nbsp;
-                [<a href="https://orcid.org/my-orcid?orcid=0000-0001-6183-1789" target="_blank">ORCID</a>]
-              </p>
-            </td>
-            <td>
-              <div style="float:right">
-                <img src="/images/sl_scyt.jpg" width="150" alt="Shen Liu portrait" />
-              </div>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-
-      <h2>个人简介</h2>
-      <p>
-        我目前在中国 <a href="https://www.xjtu.edu.cn/" target="_blank">西安交通大学</a>
-        <a href="http://mec.xjtu.edu.cn/" target="_blank">机械工程学院</a> 攻读博士学位（本科亦毕业于此）。
-        研究兴趣主要包括 <em>健康监测与预测（PHM）</em>、<em>深度学习（DL）</em>、
-        <em>故障诊断（FD）</em> 与 <em>异常检测（AD）</em>。曾担任 ISA Transactions、
-        Measurement Science and Technology 等期刊审稿人。
-      </p>
-
-      <p>1. 2020年09月 ～ 至今：在西安交通大学随 <a href="https://scholar.google.com.hk/citations?hl=en&user=wEGyDvkAAAAJ" target="_blank">陈景龙</a> 教授攻读博士学位。</p>
-      <p>2. 2024年08月 ～ 至今：意大利米兰理工大学 <a href="http://lasar.cesnef.polimi.it/" target="_blank">LASAR 实验室</a> 访问学习，合作导师为 <a href="https://cv.hal.science/enrico-zio" target="_blank">Enrico Zio 教授</a>。</p>
-    </div>
-  </div>
-
-  <!-- 语言切换脚本（单按钮，文本在 EN 与 ZN 间切换） -->
-  <script type="text/javascript">
+  <script>
     (function(){
-      var btn = document.getElementById('langToggle');
-      var en = document.getElementById('panel-en');
-      var zh = document.getElementById('panel-zh');
-
-      // 默认：显示英文，按钮文本 EN
-      function showEN(){
-        en.style.display = '';
-        zh.style.display = 'none';
-        btn.textContent = 'EN'; // 按你的要求：当前为英文时显示 EN
-      }
-      function showZN(){
-        en.style.display = 'none';
-        zh.style.display = '';
-        btn.textContent = 'ZN'; // 当前为中文时显示 ZN
-      }
-
-      // 初始化：英文
-      showEN();
-
-      // 点击后在 EN 与 ZN 之间切换（并同步内容）
+      var btn = document.getElementById('sl-goto-en');
+      if(!btn) return;
       btn.addEventListener('click', function(e){
         e.preventDefault();
-        if (btn.textContent === 'EN'){
-          // 你要求：默认 EN，点击后切换显示为“ZN”且内容改为中文
-          showZN();
+        // 若有英文面板机制则触发，否则直接跳转到英文主页
+        if (document.getElementById('panel-en')) {
+          location.hash = '#en';
+          if ('onhashchange' in window && typeof window.onhashchange === 'function') {
+            window.onhashchange();
+          }
         } else {
-          // 再次点击，切回英文并把按钮写回 EN
-          showEN();
+          location.href = './index.html';
         }
       });
     })();
