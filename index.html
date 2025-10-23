@@ -101,8 +101,10 @@
     <a href="javascript:void(0)" id="menu-other" onclick="showLang('other')" title="预留扩展页">其他</a>
   </div>
 
-  <!-- Chinese page (default shown) -->
-  <div id="cn-page">
+
+
+<!-- Chinese page (default shown) -->
+<div id="cn-page">
     <div id="layout-content" style="margin-top:15px">
       <table>
         <tbody>
@@ -113,21 +115,22 @@
               </div>
               <h3>博士研究生</h3>
               <p>
-                中国陕西省西安市碑林区咸宁西路28号，邮编 710049<br /><br />
-                <a href="http://iafe.xjtu.edu.cn/en/" target="_blank">机械工程学院</a><br />
-                <a href="http://en.xjtu.edu.cn/" target="_blank">西安交通大学</a><br />
-                邮箱：
+                <a href="http://en.xjtu.edu.cn/" target="_blank">西安交通大学</a>，
+                <a href="http://iafe.xjtu.edu.cn/en/" target="_blank">机械工程学院</a>，
+                <a href="https://mec.xjtu.edu.cn/info/1064/9594.htm" target="_blank">装备智能诊断与控制研究所</a>，
+                中国陕西省西安市碑林区咸宁西路28号，710049。<br />
+                联系方式：
                 <a href="mailto:sliu7102@163.com" target="_blank">sliu7102@163.com</a>
                 &nbsp;&nbsp;
                 <a href="mailto:lx3268181@stu.xjtu.edu.cn" target="_blank">lx3268181@stu.xjtu.edu.cn</a>
                 <br /><br />
-                [<a href="https://www.zhihu.com/people/shenliu7/" target="_blank">知乎</a>]
-                &nbsp;&nbsp;
                 [<a href="https://scholar.google.com/citations?hl=zh-CN&user=qKOUAFYAAAAJ" target="_blank">Google 学术</a>]
                 &nbsp;&nbsp;
                 [<a href="https://www.researchgate.net/profile/Shen-Liu-21" target="_blank">ResearchGate</a>]
                 &nbsp;&nbsp;
                 [<a href="https://orcid.org/my-orcid?orcid=0000-0001-6183-1789" target="_blank">ORCID</a>]
+                &nbsp;&nbsp;
+                [<a href="https://www.zhihu.com/people/shenliu7/" target="_blank">知乎</a>]
               </p>
             </td>
             <td>
@@ -141,26 +144,119 @@
 
       <h2>个人简介</h2>
       <p>
-        我目前在
-        <a href="http://mec.xjtu.edu.cn/" target="_blank">西安交通大学机械工程学院</a>
-        攻读博士学位（本科亦毕业于西安交通大学）。
-        我的研究兴趣主要包括 <em>预测与健康管理（PHM）</em>、<em>深度学习（DL）</em>、
-        <em>故障诊断（FD）</em> 与 <em>异常检测（AD）</em>。
-        我曾担任 ISA Transactions、Measurement Science and Technology 等期刊的审稿人。
+        我目前在<a href="http://mec.xjtu.edu.cn/" target="_blank">西安交通大学机械工程学院</a>攻读博士学位(计划2025年12月博士毕业)。
+        我的研究兴趣主要包括 <em>预测与健康管理(PHM)</em>、<em>故障诊断（FD）</em> 与 <em>异常检测（AD）</em>。
+        我曾担任 ISA Transactions 等期刊的审稿人。
       </p>
 
-      <p>1. 2020.09 ～ 至今：在 <a href="https://scholar.google.com.hk/citations?hl=zh-CN&user=wEGyDvkAAAAJ" target="_blank">陈敬隆 教授</a> 指导下于西安交通大学开展研究。</p>
-      <p>2. 2024.08 ～ 至今：意大利米兰理工大学 <a href="http://lasar.cesnef.polimi.it/" target="_blank">LASAR 实验室</a> 访问学习，合作导师为 <a href="https://cv.hal.science/enrico-zio" target="_blank">Enrico Zio 教授</a>。</p>
+      <!-- <p>1. 2020.09 ～ 至今：在 <a href="https://scholar.google.com.hk/citations?hl=zh-CN&user=wEGyDvkAAAAJ" target="_blank">陈敬隆 教授</a> 指导下于西安交通大学开展研究。</p>
+      <p>2. 2024.08 ～ 至今：意大利米兰理工大学 <a href="http://lasar.cesnef.polimi.it/" target="_blank">LASAR 实验室</a> 访问学习，合作导师为 <a href="https://cv.hal.science/enrico-zio" target="_blank">Enrico Zio 教授</a>。</p> -->
     
-      <h2>成果</h2>
-      <p>
-        成果1.
 
-      </p>
+    <h2>教育经历</h2>
+        <style>
+        /* Scoped styles */
+        .edu-list { margin: 4px 0 0 0; padding: 0; }
+        .edu-item { display:flex; gap:8px; padding:6px 0; }
+        .edu-left { flex: 1 1 auto; min-width: 0; }
+        .edu-right { flex: 0 0 20px; text-align: right; color:#333; font-size: 14px; line-height: 1; }
+
+        .edu-title { position: relative; padding-left: 12px; margin: 0 0 0px; font-size: 18px; font-weight: 500; color:#000; }
+        .edu-title::before { content:"•"; position:absolute; left:0; top:0; color:#000; font-size: 25px; line-height: 1; }
+        .edu-desc { margin: 0; font-size: 15px; color:#222; line-height: 1.8; }
+
+        .edu-right .edu-dates {font-size: 18px; white-space: nowrap; }
+        .edu-right .edu-note { margin-top: 4px; color:#555; }
+
+        @media (max-width: 860px){
+            .edu-item { flex-direction: column; }
+            .edu-right { text-align: left; }
+        }
+        </style>
+
+        <div class="edu-list">
+
+        <!-- 本科 -->
+        <div class="edu-item">
+            <div class="edu-left">
+            <h3 class="edu-title">西安交通大学 —— 机械工程学院</h3>
+            <p class="edu-desc">工学学士。机械工程。</p>
+            </div>
+            <div class="edu-right">
+            <div class="edu-dates">2016.09–2020.06</div>
+            <div class="edu-note">Percentage: 16/295</div>
+            </div>
+        </div>
+
+        <!-- 硕士 -->
+        <div class="edu-item">
+            <div class="edu-left">
+            <h3 class="edu-title">西安交通大学 —— 机械工程学院</h3>
+            <p class="edu-desc">硕士研究生。机械工程。研究方向：智能制造、大数据分析与质量控制</p>
+            </div>
+            <div class="edu-right">
+            <div class="edu-dates">2020.09–2022.03</div>
+            <div class="edu-note">Percentage: 12/292</div>
+            </div>
+        </div>
+
+        <!-- 联培（米兰理工） -->
+        <div class="edu-item">
+            <div class="edu-left">
+            <h3 class="edu-title">米兰理工大学 —— 风险分析与安全可靠性中心</h3>
+            <p class="edu-desc">联合培养博士研究生。机械工程。研究方向：故障预测与健康管理</p>
+            </div>
+            <div class="edu-right">
+            <div class="edu-dates">2024.08–2025.08</div>
+            <div class="edu-note">CSC 项目，联合培养导师：Enrico Zio 教授</div>
+            </div>
+        </div>
+
+        <!-- 博士（西安交大） -->
+        <div class="edu-item">
+            <div class="edu-left">
+            <h3 class="edu-title">西安交通大学 —— 机械工程学院</h3>
+            <p class="edu-desc">博士研究生。机械工程。研究方向：智能制造、大数据分析与质量控制</p>
+            </div>
+            <div class="edu-right">
+            <div class="edu-dates">2020.03–2025.12</div>
+            <div class="edu-note">已发表 SCI 论文 7 篇</div>
+            </div>
+        </div>
+
+
+    <h2>成果</h2>
+        <style>
+        /* 成果列表悬挂样式 */
+        .result-list {counter-reset: item; margin: 10px 0 0 0; padding-left: 0;}
+        .result-item {list-style: none; counter-increment: item; margin-bottom: 10px; 
+            text-indent: -1.5em;          /* 悬挂缩进 */
+            padding-left: 2em;            /* 控制编号与文本距离 */
+        }
+        .result-item::before {content: counter(item) "、"; font-weight: bold; margin-right: 0.2em; }
+        </style>
+
+        <ol class="result-list">
+        <li class="result-item">
+            Liu S, Chen JL, He SL, et al. Few-shot learning under domain shift: Attentional contrastive calibrated transformer of time series for fault diagnosis under sharp speed variation[J].
+            <em>Mechanical Systems and Signal Processing</em>, 2023, 189: 110071.
+            (SCI；IF=8.9；<strong>中科院一区Top</strong>；已出版)
+        </li>
+        </ol>
+
+        <ol class="result-list">
+        <li class="result-item">
+            Liu S, Chen JL, Liu ZJ, et al. Graph embedded patch-sense autoencoder with prior knowledge for multi-component system anomaly detection[J]. 
+            <em>Reliability Engineering & System Safety</em>, 2025, 256: 110784. 
+            (SCI；IF=11；<strong>中科院一区Top</strong>；已出版)
+        </li>
+        </ol>
+
+
 
     
     </div>
-  </div>
+</div>
 
   <!-- English page -->
   <div id="en-page" style="display:none;">
