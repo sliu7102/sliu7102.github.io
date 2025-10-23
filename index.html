@@ -9,7 +9,7 @@
   <link rel="stylesheet" href="./css/jemdoc.css" type="text/css" />
   <title>Shen Liu</title>
 
-  <!-- Google Analytics (preserved as original functionality) -->
+  <!-- Google Analytics (preserved) -->
   <script type="text/javascript">
     var _gaq=_gaq||[];
     _gaq.push(['_setAccount','UA-39824124-1']);
@@ -21,74 +21,67 @@
     })();
   </script>
 
-  <!-- Language toggle + active-state handling -->
-  <script type="text/javascript">
-    function showLang(lang){
-      var cn = document.getElementById('cn-page');
-      var en = document.getElementById('en-page');
-      var other = document.getElementById('other-page');
-
-      var cnLink = document.getElementById('menu-cn');
-      var enLink = document.getElementById('menu-en');
-      var otherLink = document.getElementById('menu-other');
-
-      if(lang === 'cn'){
-        cn.style.display = 'block';
-        en.style.display = 'none';
-        if(other) other.style.display = 'none';
-      }else if(lang === 'en'){
-        cn.style.display = 'none';
-        en.style.display = 'block';
-        if(other) other.style.display = 'none';
-      }else{ // other
-        cn.style.display = 'none';
-        en.style.display = 'none';
-        if(other) other.style.display = 'block';
-      }
-
-      // 激活样式
-      if(cnLink) cnLink.className = (lang === 'cn') ? 'active' : '';
-      if(enLink) enLink.className = (lang === 'en') ? 'active' : '';
-      if(otherLink) otherLink.className = (lang === 'other') ? 'active' : '';
-    }
-    document.addEventListener('DOMContentLoaded', function(){ showLang('cn'); }, false);
-  </script>
-
-  <!-- Updated style: black background for active, white text -->
+  <!-- Styles (consolidated) -->
   <style type="text/css">
     /* Sticky language menu */
     #lang-menu{
-      position: sticky;
-      top: 0;
-      z-index: 999;
-      text-align: left;
-      padding: 8px 12px;
-      background: #fff;
-      border-bottom: 1px solid #eee;
-      font-size: 14px;
-      font-family: "Helvetica", "Arial", sans-serif;
+      position: sticky; top: 0; z-index: 999;
+      text-align: left; padding: 8px 12px;
+      background: #fff; border-bottom: 1px solid #eee;
+      font-size: 14px; font-family: "Helvetica","Arial",sans-serif;
     }
     #lang-menu a{
-      padding: 6px 10px;
-      text-decoration: none;
-      color: #333;
-      border-radius: 4px;
-      transition: all 0.2s ease;
+      padding: 6px 10px; text-decoration: none; color:#333;
+      border-radius: 4px; transition: all .2s ease;
     }
-    #lang-menu a:hover{
-      background-color: #000;
-      color: #fff;
+    #lang-menu a:hover{ background:#000; color:#fff; }
+    #lang-menu a.active{ background:#000; color:#fff; font-weight:bold; }
+    #lang-menu .sep{ color:#999; margin:0 4px; }
+
+    /* Shared section spacing */
+    #layout-content{ margin-top:15px; }
+
+    /* 教育经历 */
+    .edu-list{ margin:4px 0 0; padding:0; }
+    .edu-item{ display:flex; gap:8px; padding:6px 0; }
+    .edu-left{ flex:1 1 auto; min-width:0; }
+    .edu-right{ flex:0 0 20px; text-align:right; color:#333; font-size:14px; line-height:1; }
+    .edu-title{ position:relative; padding-left:12px; margin:0 0 0; font-size:18px; font-weight:500; color:#000; }
+    .edu-title::before{ content:"•"; position:absolute; left:0; top:0; color:#000; font-size:25px; line-height:1; }
+    .edu-desc{ margin:0; font-size:15px; color:#222; line-height:1.8; }
+    .edu-right .edu-dates{ font-size:18px; white-space:nowrap; }
+    .edu-right .edu-note{ margin-top:4px; color:#555; }
+    @media (max-width:860px){ .edu-item{flex-direction:column;} .edu-right{text-align:left;} }
+
+    /* 成果（悬挂缩进与自动编号） */
+    .result-list{ counter-reset:item; margin:10px 0 0; padding-left:0; }
+    .result-item{
+      list-style:none; counter-increment:item; margin-bottom:10px;
+      text-indent:-2em; padding-left:2.5em;
     }
-    #lang-menu a.active{
-      background-color: #000;
-      color: #fff;
-      font-weight: bold;
-    }
-    #lang-menu .sep{
-      color:#999;
-      margin: 0 4px;
-    }
+    .result-item::before{ content:counter(item) "、"; font-weight:bold; margin-right:.2em; }
+
+    /* 奖励与荣誉 */
+    .award-list{ margin:6px 0 0; padding:0; border-top:1px solid #000; }
+    .award-item{ display:flex; justify-content:space-between; align-items:flex-start; padding:10px 0; border-bottom:1px solid #eee; }
+    .award-left{ flex:1; font-size:16px; color:#000; line-height:1.8; text-align:left; }
+    .award-left::before{ content:"•"; margin-right:6px; }
+    .award-right{ flex-shrink:0; width:100px; text-align:right; font-style:italic; color:#333; font-size:15px; line-height:1.8; }
   </style>
+
+  <!-- Language toggle -->
+  <script type="text/javascript">
+    function showLang(lang){
+      var sections = { cn:'cn-page', en:'en-page', other:'other-page' };
+      for (var k in sections){
+        var el = document.getElementById(sections[k]);
+        if(el) el.style.display = (k===lang)?'block':'none';
+        var link = document.getElementById('menu-'+k);
+        if(link) link.className = (k===lang)?'active':'';
+      }
+    }
+    document.addEventListener('DOMContentLoaded', function(){ showLang('cn'); }, false);
+  </script>
 </head>
 
 <body>
@@ -101,200 +94,171 @@
     <a href="javascript:void(0)" id="menu-other" onclick="showLang('other')" title="预留扩展页">其他</a>
   </div>
 
-
-
-<!-- Chinese page (default shown) -->
-<div id="cn-page">
-    <div id="layout-content" style="margin-top:15px">
-      <table>
-        <tbody>
-          <tr>
-            <td width="1680">
-              <div id="toptitle">
-                <h1>Shen Liu &nbsp;&nbsp; 刘莘</h1>
-              </div>
-              <h3>博士研究生</h3>
-              <p>
-                <a href="http://en.xjtu.edu.cn/" target="_blank">西安交通大学</a>，
-                <a href="http://iafe.xjtu.edu.cn/en/" target="_blank">机械工程学院</a>，
-                <a href="https://mec.xjtu.edu.cn/info/1064/9594.htm" target="_blank">装备智能诊断与控制研究所</a>，
-                中国陕西省西安市碑林区咸宁西路28号，710049。<br />
-                联系方式：
-                <a href="mailto:sliu7102@163.com" target="_blank">sliu7102@163.com</a>
-                &nbsp;&nbsp;
-                <a href="mailto:lx3268181@stu.xjtu.edu.cn" target="_blank">lx3268181@stu.xjtu.edu.cn</a>
-                <br /><br />
-                [<a href="https://scholar.google.com/citations?hl=zh-CN&user=qKOUAFYAAAAJ" target="_blank">Google 学术</a>]
-                &nbsp;&nbsp;
-                [<a href="https://www.researchgate.net/profile/Shen-Liu-21" target="_blank">ResearchGate</a>]
-                &nbsp;&nbsp;
-                [<a href="https://orcid.org/my-orcid?orcid=0000-0001-6183-1789" target="_blank">ORCID</a>]
-                &nbsp;&nbsp;
-                [<a href="https://www.zhihu.com/people/shenliu7/" target="_blank">知乎</a>]
-              </p>
-            </td>
-            <td>
-              <div style="float:right">
-                <img src="/images/sl_scyt.jpg" width="150" alt="Shen Liu portrait" />
-              </div>
-            </td>
-          </tr>
-        </tbody>
-      </table>
+  <!-- Chinese page -->
+  <div id="cn-page">
+    <div id="layout-content">
+      <table><tbody><tr>
+        <td width="1680">
+          <div id="toptitle"><h1>Shen Liu &nbsp;&nbsp; 刘莘</h1></div>
+          <h3>博士研究生</h3>
+          <p>
+            <a href="http://en.xjtu.edu.cn/" target="_blank">西安交通大学</a>，
+            <a href="http://iafe.xjtu.edu.cn/en/" target="_blank">机械工程学院</a>，
+            <a href="https://mec.xjtu.edu.cn/info/1064/9594.htm" target="_blank">装备智能诊断与控制研究所</a>，
+            中国陕西省西安市碑林区咸宁西路28号，710049。<br />
+            联系方式：
+            <a href="mailto:sliu7102@163.com" target="_blank">sliu7102@163.com</a>&nbsp;&nbsp;
+            <a href="mailto:lx3268181@stu.xjtu.edu.cn" target="_blank">lx3268181@stu.xjtu.edu.cn</a>
+            <br /><br />
+            [<a href="https://scholar.google.com/citations?hl=zh-CN&user=qKOUAFYAAAAJ" target="_blank">Google 学术</a>]
+            &nbsp;&nbsp;[<a href="https://www.researchgate.net/profile/Shen-Liu-21" target="_blank">ResearchGate</a>]
+            &nbsp;&nbsp;[<a href="https://orcid.org/my-orcid?orcid=0000-0001-6183-1789" target="_blank">ORCID</a>]
+            &nbsp;&nbsp;[<a href="https://www.zhihu.com/people/shenliu7/" target="_blank">知乎</a>]
+          </p>
+        </td>
+        <td><div style="float:right"><img src="/images/sl_scyt.jpg" width="150" alt="Shen Liu portrait" /></div></td>
+      </tr></tbody></table>
 
       <h2>个人简介</h2>
       <p>
-        我目前在<a href="http://mec.xjtu.edu.cn/" target="_blank">西安交通大学机械工程学院</a>攻读博士学位(计划2025年12月博士毕业)。
+        我目前在 <a href="http://mec.xjtu.edu.cn/" target="_blank">西安交通大学机械工程学院</a> 攻读博士学位（计划 2025 年 12 月博士毕业）。
         我的研究兴趣主要包括 <em>预测与健康管理(PHM)</em>、<em>故障诊断（FD）</em> 与 <em>异常检测（AD）</em>。
         我曾担任 ISA Transactions 等期刊的审稿人。
       </p>
 
-      <!-- <p>1. 2020.09 ～ 至今：在 <a href="https://scholar.google.com.hk/citations?hl=zh-CN&user=wEGyDvkAAAAJ" target="_blank">陈敬隆 教授</a> 指导下于西安交通大学开展研究。</p>
-      <p>2. 2024.08 ～ 至今：意大利米兰理工大学 <a href="http://lasar.cesnef.polimi.it/" target="_blank">LASAR 实验室</a> 访问学习，合作导师为 <a href="https://cv.hal.science/enrico-zio" target="_blank">Enrico Zio 教授</a>。</p> -->
-    
-
-    <h2>教育经历</h2>
-        <style>
-        /* Scoped styles */
-        .edu-list { margin: 4px 0 0 0; padding: 0; }
-        .edu-item { display:flex; gap:8px; padding:6px 0; }
-        .edu-left { flex: 1 1 auto; min-width: 0; }
-        .edu-right { flex: 0 0 20px; text-align: right; color:#333; font-size: 14px; line-height: 1; }
-
-        .edu-title { position: relative; padding-left: 12px; margin: 0 0 0px; font-size: 18px; font-weight: 500; color:#000; }
-        .edu-title::before { content:"•"; position:absolute; left:0; top:0; color:#000; font-size: 25px; line-height: 1; }
-        .edu-desc { margin: 0; font-size: 15px; color:#222; line-height: 1.8; }
-
-        .edu-right .edu-dates {font-size: 18px; white-space: nowrap; }
-        .edu-right .edu-note { margin-top: 4px; color:#555; }
-
-        @media (max-width: 860px){
-            .edu-item { flex-direction: column; }
-            .edu-right { text-align: left; }
-        }
-        </style>
-
-        <div class="edu-list">
-
-        <!-- 本科 -->
+      <!-- 教育经历 -->
+      <h2>教育经历</h2>
+      <div class="edu-list">
         <div class="edu-item">
-            <div class="edu-left">
+          <div class="edu-left">
             <h3 class="edu-title">西安交通大学 —— 机械工程学院</h3>
             <p class="edu-desc">工学学士。机械工程。</p>
-            </div>
-            <div class="edu-right">
+          </div>
+          <div class="edu-right">
             <div class="edu-dates">2016.09–2020.06</div>
             <div class="edu-note">Percentage: 16/295</div>
-            </div>
+          </div>
         </div>
 
-        <!-- 硕士 -->
         <div class="edu-item">
-            <div class="edu-left">
+          <div class="edu-left">
             <h3 class="edu-title">西安交通大学 —— 机械工程学院</h3>
             <p class="edu-desc">硕士研究生。机械工程。研究方向：智能制造、大数据分析与质量控制</p>
-            </div>
-            <div class="edu-right">
+          </div>
+          <div class="edu-right">
             <div class="edu-dates">2020.09–2022.03</div>
             <div class="edu-note">Percentage: 12/292</div>
-            </div>
+          </div>
         </div>
 
-        <!-- 联培（米兰理工） -->
         <div class="edu-item">
-            <div class="edu-left">
+          <div class="edu-left">
             <h3 class="edu-title">米兰理工大学 —— 风险分析与安全可靠性中心</h3>
             <p class="edu-desc">联合培养博士研究生。机械工程。研究方向：故障预测与健康管理</p>
-            </div>
-            <div class="edu-right">
+          </div>
+          <div class="edu-right">
             <div class="edu-dates">2024.08–2025.08</div>
             <div class="edu-note">CSC 项目，联合培养导师：Enrico Zio 教授</div>
-            </div>
+          </div>
         </div>
 
-        <!-- 博士（西安交大） -->
         <div class="edu-item">
-            <div class="edu-left">
+          <div class="edu-left">
             <h3 class="edu-title">西安交通大学 —— 机械工程学院</h3>
             <p class="edu-desc">博士研究生。机械工程。研究方向：智能制造、大数据分析与质量控制</p>
-            </div>
-            <div class="edu-right">
+          </div>
+          <div class="edu-right">
             <div class="edu-dates">2020.03–2025.12</div>
             <div class="edu-note">已发表 SCI 论文 7 篇</div>
-            </div>
+          </div>
         </div>
+      </div>
 
-
-    <h2>成果</h2>
-        <style>
-        /* 成果列表悬挂样式 */
-        .result-list {counter-reset: item; margin: 10px 0 0 0; padding-left: 0;}
-        .result-item {list-style: none; counter-increment: item; margin-bottom: 10px; 
-            text-indent: -1.5em;          /* 悬挂缩进 */
-            padding-left: 2em;            /* 控制编号与文本距离 */
-        }
-        .result-item::before {content: counter(item) "、"; font-weight: bold; margin-right: 0.2em; }
-        </style>
-
-        <ol class="result-list">
+      <!-- 成果 -->
+      <h2>成果</h2>
+      <ol class="result-list">
         <li class="result-item">
-            Liu S, Chen JL, He SL, et al. Few-shot learning under domain shift: Attentional contrastive calibrated transformer of time series for fault diagnosis under sharp speed variation[J].
-            <em>Mechanical Systems and Signal Processing</em>, 2023, 189: 110071.
-            (SCI；IF=8.9；<strong>中科院一区Top</strong>；已出版)
+          Liu S, Chen JL, Liu ZJ, et al. Graph embedded patch-sense autoencoder with prior knowledge for multi-component system anomaly detection[J].
+          <em>Reliability Engineering &amp; System Safety</em>, 2025, 256: 110784.
+          (SCI；IF=11；<strong>中科院一区Top</strong>)(合作教授：加拿大不列颠哥伦比亚大学，电子与计算机工程系 Jane Z. Wang 教授(加拿大工程院院士、IEEE Fellow))
         </li>
-        </ol>
-
-        <ol class="result-list">
         <li class="result-item">
-            Liu S, Chen JL, Liu ZJ, et al. Graph embedded patch-sense autoencoder with prior knowledge for multi-component system anomaly detection[J]. 
-            <em>Reliability Engineering & System Safety</em>, 2025, 256: 110784. 
-            (SCI；IF=11；<strong>中科院一区Top</strong>；已出版)
+          Liu S, Chen JL, Shi Z, et al. Representations aligned counterfactual domain learning for open-set fault diagnosis under speed transient conditions[J].
+          <em>Knowledge-Based Systems</em>, 2025, 310: 112932.
+          (SCI；IF=7.6；<strong>中科院一区Top</strong>)
         </li>
-        </ol>
+        <li class="result-item">
+          Liu S, Chen JL, Feng Y, et al. Generative artificial intelligence and data augmentation for prognostic and health management: Taxonomy, progress, and prospects[J].
+          <em>Expert Systems with Applications</em>, 2024, 255: 124511.
+          (SCI；IF=7.5；<strong>中科院一区Top</strong>)
+        </li>
+        <li class="result-item">
+          Liu S, Chen JL, He SL, et al. Few-shot learning under domain shift: Attentional contrastive calibrated transformer of time series for fault diagnosis under sharp speed variation[J].
+          <em>Mechanical Systems and Signal Processing</em>, 2023, 189: 110071.
+          (SCI；IF=8.9；<strong>中科院一区Top</strong>)
+        </li>
+        <li class="result-item">
+          Liu S, Chen JL, He SL, et al. Intelligent fault diagnosis under small sample size conditions via Bidirectional InfoMax GAN with unsupervised representation learning[J].
+          <em>Knowledge-Based Systems</em>, 2021, 232: 107488.
+          (SCI；IF=7.6；<strong>中科院一区Top</strong>)
+        </li>
+        <li class="result-item">
+          Liu S, Chen JL, He SL, et al. Subspace Network with Shared Representation learning for intelligent fault diagnosis of machine under speed transient conditions with few samples[J].
+          <em>ISA Transactions</em>, 2022, 128: 531-544.
+          (SCI；IF=6.5；<strong>中科院二区Top</strong>)
+        </li>
+        <li class="result-item">
+          Liu S, Chen JL, Qu C, et al. LOSGAN: latent optimized stable GAN for intelligent fault diagnosis with limited data in rotating machinery[J].
+          <em>Measurement Science and Technology</em>, 2021, 32(4): 045101.
+          (SCI；IF=3.4；中科院三区)
+        </li>
+        <li class="result-item">
+          刘莘，王珺，陈景龙等．基于多源数据密度估计自编码器的液体火箭发动机无监督异常检测[J].
+          <em>机械工程学报</em>, 2025, 61(02): 36-45. (EI)
+        </li>
+        <li class="result-item">
+          陈景龙，刘莘，宋霄罡，訾艳阳．一种小样本下隐式激励对抗训练的机械故障智能诊断方法[P]. CN202011121236.2. (专利；已授权)
+        </li>
+      </ol>
 
 
-
-    
+      <!-- 奖励与荣誉 -->
+      <h2>奖励与荣誉</h2>
+      <!-- <div class="award-list"> -->
+        <div class="award-item"><div class="award-left"><strong>国家奖学金</strong></div><div class="award-right">2025</div></div>
+        <div class="award-item"><div class="award-left"><strong>广西科学技术发明奖二等奖</strong> 复杂装备故障特征自主挖掘与跨域溯源技术及应用。排第 6</div><div class="award-right">2025</div></div>
+        <div class="award-item"><div class="award-left">“<strong>互联网+</strong>”<strong>大学生创新创业大赛省级一等奖</strong> 中国国际“互联网+”大学生创新创业大赛省级一等奖（金奖），排第 3</div><div class="award-right">2025</div></div>
+        <div class="award-item"><div class="award-left"><strong>西安交通大学学业奖学金</strong> 一等奖</div><div class="award-right">2024</div></div>
+        <div class="award-item"><div class="award-left"><strong>CSC 联合培养奖学金</strong> 意大利米兰理工大学联合培养项目</div><div class="award-right">2023</div></div>
+        <div class="award-item"><div class="award-left"><strong>中国机器人大赛</strong> 工程类竞技机器人，排第 2</div><div class="award-right">2019</div></div>
+        <div class="award-item"><div class="award-left"><strong>全国大学生机械产品数字化设计大赛</strong> 全国一等奖，排第 2</div><div class="award-right">2019</div></div>
+      </div>
     </div>
-</div>
+  </div>
 
   <!-- English page -->
   <div id="en-page" style="display:none;">
-    <div id="layout-content" style="margin-top:15px">
-      <table>
-        <tbody>
-          <tr>
-            <td width="1680">
-              <div id="toptitle">
-                <h1>Shen Liu &nbsp;&nbsp; 刘莘</h1>
-              </div>
-              <h3>Ph.D Student</h3>
-              <p>
-                No 28 Xianning West Road, Beilin District, Xi'an Shaanxi, P.R.China, 710049<br /><br />
-                <a href="http://iafe.xjtu.edu.cn/en/" target="_blank">School of Mechanical Engineering</a><br />
-                <a href="http://en.xjtu.edu.cn/" target="_blank">Xi'an Jiaotong University</a><br />
-                Email:
-                <a href="mailto:sliu7102@163.com" target="_blank">sliu7102@163.com</a>
-                &nbsp;&nbsp;
-                <a href="mailto:lx3268181@stu.xjtu.edu.cn" target="_blank">lx3268181@stu.xjtu.edu.cn</a>
-                <br /><br />
-                [<a href="https://www.zhihu.com/people/shenliu7/" target="_blank">知乎</a>]
-                &nbsp;&nbsp;
-                [<a href="https://scholar.google.com/citations?hl=en&user=qKOUAFYAAAAJ" target="_blank">Google Scholar</a>]
-                &nbsp;&nbsp;
-                [<a href="https://www.researchgate.net/profile/Shen-Liu-21" target="_blank">ResearchGate</a>]
-                &nbsp;&nbsp;
-                [<a href="https://orcid.org/my-orcid?orcid=0000-0001-6183-1789" target="_blank">ORCID</a>]
-              </p>
-            </td>
-            <td>
-              <div style="float:right">
-                <img src="/images/sl_scyt.jpg" width="150" alt="Shen Liu portrait" />
-              </div>
-            </td>
-          </tr>
-        </tbody>
-      </table>
+    <div id="layout-content">
+      <table><tbody><tr>
+        <td width="1680">
+          <div id="toptitle"><h1>Shen Liu &nbsp;&nbsp; 刘莘</h1></div>
+          <h3>Ph.D Student</h3>
+          <p>
+            No 28 Xianning West Road, Beilin District, Xi'an Shaanxi, P.R.China, 710049<br /><br />
+            <a href="http://iafe.xjtu.edu.cn/en/" target="_blank">School of Mechanical Engineering</a><br />
+            <a href="http://en.xjtu.edu.cn/" target="_blank">Xi'an Jiaotong University</a><br />
+            Email:
+            <a href="mailto:sliu7102@163.com" target="_blank">sliu7102@163.com</a>&nbsp;&nbsp;
+            <a href="mailto:lx3268181@stu.xjtu.edu.cn" target="_blank">lx3268181@stu.xjtu.edu.cn</a>
+            <br /><br />
+            [<a href="https://www.zhihu.com/people/shenliu7/" target="_blank">知乎</a>]
+            &nbsp;&nbsp;[<a href="https://scholar.google.com/citations?hl=en&user=qKOUAFYAAAAJ" target="_blank">Google Scholar</a>]
+            &nbsp;&nbsp;[<a href="https://www.researchgate.net/profile/Shen-Liu-21" target="_blank">ResearchGate</a>]
+            &nbsp;&nbsp;[<a href="https://orcid.org/my-orcid?orcid=0000-0001-6183-1789" target="_blank">ORCID</a>]
+          </p>
+        </td>
+        <td><div style="float:right"><img src="/images/sl_scyt.jpg" width="150" alt="Shen Liu portrait" /></div></td>
+      </tr></tbody></table>
 
       <h2>Biography</h2>
       <p>
@@ -305,15 +269,15 @@
         <em>Fault Diagnosis (FD)</em>, and <em>Anomaly Detection (AD)</em>. I have been a reviewer for ISA Transactions,
         Measurement Science and Technology, and other journals.
       </p>
-
       <p>1. 2020.09 ~ Present. Studying under the supervision of <a href="https://scholar.google.com.hk/citations?hl=en&user=wEGyDvkAAAAJ" target="_blank">Prof. Jinglong Chen</a> in Xi'an Jiaotong University (XJTU).</p>
       <p>2. 2024.08 ~ Present. Visiting studying in the <a href="http://lasar.cesnef.polimi.it/" target="_blank">LASAR lab</a> of Politecnico di Milano, Italy, advised by <a href="https://cv.hal.science/enrico-zio" target="_blank">Prof. Enrico Zio</a>.</p>
     </div>
   </div>
 
-  <!-- Other page: blank interface -->
+  
+  <!-- Other page (blank) -->
   <div id="other-page" style="display:none;">
-    <div id="layout-content" style="margin-top:15px">
+    <div id="layout-content">
       <!-- 留白接口：此处可插入后续内容模块 -->
     </div>
   </div>
