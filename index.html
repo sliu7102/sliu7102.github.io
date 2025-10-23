@@ -1,248 +1,260 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
-  "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" class="cye-nm">
+<!DOCTYPE
+    html
+    PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd"
+>
+
+<html
+    xmlns="http://www.w3.org/1999/xhtml"
+    xml:lang="en"
+    class="cye-nm"
+>
+
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="shortcut icon" href="./images/sl_scyt.jpg" />
-  <meta name="keywords" content="Shen Liu" />
-  <meta name="description" content="Shen Liu's home page." />
-  <link rel="stylesheet" href="./css/jemdoc.css" type="text/css" />
-  <title>Shen Liu</title>
+    <meta
+        http-equiv="Content-Type"
+        content="text/html; charset=UTF-8"
+    >
+    <link
+        rel="shortcut icon"
+        href="./images/sl_scyt.jpg"
+    >
 
-  <style type="text/css">
-    :root{
-      --nav-h: 64px;         /* 估算导航高度，便于计算内容最小高度 */
-      --side-pad: 8vw;       /* 两侧内边距（随屏幕宽度自适应） */
-      --card-pad-y: 16px;    /* 上下内边距 */
-    }
+    <meta
+        name="keywords"
+        content="Shen Liu"
+    >
+    <meta
+        name="description"
+        content="Shen Liu&#39;s home page."
+    >
+    <meta
+        name="360-site-verification"
+        content="d423d8da2550ca5def68c898ec0f4a36"
+    />
+    <link
+        rel="stylesheet"
+        href="./css/jemdoc.css"
+        type="text/css"
+    >
 
-    html, body {
-      height: 100%;
-    }
+    <title>Shen Liu</title>
 
-    body {
-      margin: 0;
-      padding: 0;
-      font-family: "Helvetica Neue", Helvetica, Arial, "Microsoft YaHei", sans-serif;
-      background-color: #ffffff; /* 背景改为白色，真正“铺满”页面 */
-      display: flex;
-      flex-direction: column;
-      align-items: stretch;     /* 关键：让主体容器拉满整行 */
-    }
+    <script
+        type="text/javascript"
+        async=""
+        src="./css/ga.js"
+    ></script>
+    <script type="text/javascript">
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-39824124-1']);
+        _gaq.push(['_trackPageview']);
+        (function () {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+    </script>
 
-    /* 顶部导航栏（全宽） */
-    .navbar {
-      width: 100%;
-      background: #ffffff;
-      border-bottom: 1px solid #eaeaea;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
-      text-align: center;
-      padding: 14px 0;
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      min-height: var(--nav-h);
-      box-sizing: border-box;
-    }
+    <style id="nightModeStyle">
+        html.cye-enabled.cye-nm:not(*:-webkit-full-screen-ancestor) body,
+        html.cye-enabled.cye-nm:not(*:-webkit-full-screen-ancestor) #cye-workaround-body {
+            -webkit-filter: contrast(91%) brightness(84%) invert(1);
+        }
+    </style>
+    <style id="cyebody">
+        html.cye-enabled.cye-lm body {
+            background-color: #cce8cf !important;
+            border-color: rgb(51, 58, 51) !important;
+            background-image: none !important;
+            color: #000000 !important
+        }
+    </style>
+    <style id="cyediv">
+        html.cye-enabled.cye-lm div {
+            background-color: #cce8cf !important;
+            border-color: rgb(51, 58, 51) !important;
+            background-image: none !important;
+            color: #000000 !important
+        }
+    </style>
+    <style id="cyetable">
+        html.cye-enabled.cye-lm th {
+            background-color: #cce8cf !important;
+            border-color: rgb(51, 58, 51) !important;
+            background-image: none !important;
+            color: #000000 !important
+        }
 
-    .navbar a {
-      display: inline-block;
-      margin: 0 18px;
-      padding: 8px 20px;
-      text-decoration: none;
-      color: #333;
-      font-size: 16px;
-      border-radius: 6px;
-      transition: all 0.25s ease;
-    }
-    .navbar a:hover { background-color: #333; color: #fff; }
-    .navbar a.active { background-color: #333; color: #fff; }
+        html.cye-enabled.cye-lm td {
+            background-color: #cce8cf !important;
+            border-color: rgb(51, 58, 51) !important;
+            background-image: none !important;
+            color: #000000 !important
+        }
+    </style>
+    <style id="cyetextInput">
+        html.cye-enabled.cye-lm input[type=text] {
+            background-color: #cce8cf !important;
+            border-color: rgb(51, 58, 51) !important;
+            background-image: none !important;
+            color: #000000 !important
+        }
 
-    /* 主体容器：铺满宽度与高度 */
-    .content-wrapper {
-      width: 100%;
-      max-width: none;              /* 关键：不再限制最大宽度 */
-      flex: 1 1 auto;               /* 填充剩余高度 */
-      display: block;
-    }
+        html.cye-enabled.cye-lm textarea {
+            background-color: #cce8cf !important;
+            border-color: rgb(51, 58, 51) !important;
+            background-image: none !important;
+            color: #000000 !important
+        }
+    </style>
+    <style id="cyeselect">
+        html.cye-enabled.cye-lm select {
+            background-color: #cce8cf !important;
+            border-color: rgb(51, 58, 51) !important;
+            background-image: none !important;
+            color: #000000 !important
+        }
+    </style>
+    <style id="cyeul">
+        html.cye-enabled.cye-lm ul {
+            background-color: #cce8cf !important;
+            border-color: rgb(51, 58, 51) !important;
+            background-image: none !important;
+            color: #000000 !important
+        }
+    </style>
+    <style id="cyeChangeByClick">
+        html.cye-enabled.cye-lm .cye-lm-tag,
+        html.cye-enabled.cye-lm.cye-lm-tag {
+            background-color: #cce8cf !important;
+            border-color: rgb(51, 58, 51) !important;
+            background-image: none !important;
+            color: #000000 !important
+        }
+    </style>
+    <style id="style-1-cropbar-clipper">
+        /* Copyright 2014 Evernote Corporation. All rights reserved. */
+        .en-markup-crop-options {
+            top: 18px !important;
+            left: 50% !important;
+            margin-left: -100px !important;
+            width: 200px !important;
+            border: 2px rgba(255, 255, 255, .38) solid !important;
+            border-radius: 4px !important;
+        }
 
-    /* 内容卡片：现在不再是卡片效果，而是全宽白底，可选保留内边距 */
-    .content-card {
-      width: 100%;
-      margin: 0;                    /* 关键：去掉外边距，贴合全宽 */
-      padding: var(--card-pad-y) var(--side-pad); /* 两侧留呼吸感 */
-      box-sizing: border-box;
-      background-color: #ffffff;    /* 保证内容背景纯白 */
-      border-radius: 0;             /* 铺满效果，不再需要圆角 */
-      box-shadow: none;             /* 铺满效果，不再需要阴影 */
-      min-height: calc(100vh - var(--nav-h)); /* 关键：内容至少撑满视口（减去导航） */
-    }
 
-    /* 语言切换显示控制 */
-    .lang { display: none; }
-    .lang.active { display: block; }
 
-    /* 基本排版 */
-    h1, h2, h3 { color: #222; margin-top: 0.6em; }
-    p { line-height: 1.75em; color: #444; }
-    table { width: 100%; table-layout: fixed; }
-    td { vertical-align: top; }
+        .en-markup-crop-options div div:first-of-type {
+            margin-left: 0px !important;
+        }
+    </style>
 
-    /* 图片与窄屏优化 */
-    img { max-width: 100%; height: auto; }
-    @media (max-width: 840px){
-      :root{ --side-pad: 5vw; }
-      .navbar a { margin: 0 10px; padding: 8px 14px; }
-      table, tbody, tr, td { display: block; width: 100%; }
-      td[style*="text-align:right"]{ text-align: left !important; margin-top: 12px; }
-    }
-  </style>
+
 </head>
 
-<body>
-  <!-- 顶部导航栏 -->
-  <div class="navbar">
-    <a href="#zh" id="btn-zh">中文主页</a>
-    <a href="#en" id="btn-en">English Home</a>
-  </div>
 
-  <!-- 页面内容区（全宽且最小高度填满） -->
-  <div class="content-wrapper">
-    <div id="panel-zh" class="lang content-card active" lang="zh-CN">
-      <table>
-        <tbody>
-          <tr>
-            <td>
-              <div id="toptitle">
-                <h1>刘莘 &nbsp; &nbsp; Shen Liu</h1>
-              </div>
-              <h3>博士研究生</h3>
-              <p>
-                中国陕西省西安市碑林区咸宁西路28号，邮编：710049<br /><br />
-                <a href="http://iafe.xjtu.edu.cn/en/" target="_blank">机械工程学院</a> <br />
-                <a href="http://en.xjtu.edu.cn/" target="_blank">西安交通大学</a> <br />
-                邮箱：
-                <a href="mailto:sliu7102@163.com" target="_blank">sliu7102@163.com</a>
-                &nbsp;&nbsp； 
-                <a href="mailto:lx3268181@stu.xjtu.edu.cn" target="_blank">lx3268181@stu.xjtu.edu.cn</a>
-                <br /><br />
-                [<a href="https://www.zhihu.com/people/shenliu7/" target="_blank">知乎</a>]
-                &nbsp;&nbsp;
-                [<a href="https://scholar.google.com/citations?hl=en&amp;user=qKOUAFYAAAAJ" target="_blank">Google Scholar</a>]
-                &nbsp;&nbsp;
-                [<a href="https://www.researchgate.net/profile/Shen-Liu-21" target="_blank">ResearchGate</a>]
-                &nbsp;&nbsp;
-                [<a href="https://orcid.org/my-orcid?orcid=0000-0001-6183-1789" target="_blank">ORCID</a>]
-              </p>
+<body ryt12610="1">
+    <div
+        id="layout-content"
+        style="margin-top:15px"
+    >
 
-              <h2>个人简介</h2>
-              <p>
-                我目前在中国 <a href="https://www.xjtu.edu.cn/" target="_blank">西安交通大学</a>
-                <a href="http://mec.xjtu.edu.cn/" target="_blank">机械工程学院</a> 攻读博士学位（本科亦毕业于此）。
-                研究兴趣主要包括 <em>健康监测与预测（PHM）</em>、<em>深度学习（DL）</em>、<em>故障诊断（FD）</em> 与
-                <em>异常检测（AD）</em>。曾担任 ISA Transactions、Measurement Science and Technology
-                等期刊审稿人。
-              </p>
+        <table>
+            <tbody>
+                <tr>
+                    <td width="670">
+                        <div id="toptitle">
+                            <h1>Shen Liu</a> &nbsp; &nbsp; 刘莘
+                            </h1>
+                            <h1>
 
-              <p>1. 2020年09月 ～ 至今：在西安交通大学随 <a href="https://scholar.google.com.hk/citations?hl=en&amp;user=wEGyDvkAAAAJ" target="_blank">陈景龙</a> 教授攻读博士学位。</p>
-              <p>2. 2024年08月 ～ 至今：意大利米兰理工大学 <a href="http://lasar.cesnef.polimi.it/" target="_blank">LASAR 实验室</a> 访问学习，合作导师为 <a href="https://cv.hal.science/enrico-zio" target="_blank">Enrico Zio 教授</a>。</p>
-            </td>
-            <td style="text-align:right">
-              <img src="/images/sl_scyt.jpg" border="0" width="150" alt="portrait" />
-            </td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
 
-    <div id="panel-en" class="lang content-card" lang="en">
-      <table>
-        <tbody>
-          <tr>
-            <td>
-              <div id="toptitle">
-                <h1>Shen Liu &nbsp; &nbsp; 刘莘</h1>
-              </div>
-              <h3>Ph.D Student</h3>
-              <p>
-                No 28 Xianning West Road, Beilin District, Xi'an Shaanxi, P.R.China, 710049<br /><br />
-                <a href="http://iafe.xjtu.edu.cn/en/" target="_blank">School of Mechanical Engineering</a> <br />
-                <a href="http://en.xjtu.edu.cn/" target="_blank">Xi'an Jiaotong University</a> <br />
-                Email:
-                <a href="mailto:sliu7102@163.com" target="_blank">sliu7102@163.com</a>
-                &nbsp;&nbsp;
-                <a href="mailto:lx3268181@stu.xjtu.edu.cn" target="_blank">lx3268181@stu.xjtu.edu.cn</a>
-                <br /><br />
-                [<a href="https://www.zhihu.com/people/shenliu7/" target="_blank">Zhihu</a>]
-                &nbsp;&nbsp;
-                [<a href="https://scholar.google.com/citations?hl=en&amp;user=qKOUAFYAAAAJ" target="_blank">Google Scholar</a>]
-                &nbsp;&nbsp;
-                [<a href="https://www.researchgate.net/profile/Shen-Liu-21" target="_blank">ResearchGate</a>]
-                &nbsp;&nbsp;
-                [<a href="https://orcid.org/my-orcid?orcid=0000-0001-6183-1789" target="_blank">ORCID</a>]
-              </p>
 
-              <h2>Biography</h2>
-              <p>
-                I am currently a Ph.D. student with the
-                <a href="http://mec.xjtu.edu.cn/" target="_blank">School of Mechanical Engineering</a>,
-                <a href="https://www.xjtu.edu.cn/" target="_blank">Xi'an Jiaotong University</a>, China, where I obtained my bachelor degree.
-                My research interest mainly lies in <em>Prognostics and Health Management (PHM)</em>,
-                <em>Deep Learning (DL)</em>, <em>Fault Diagnosis (FD)</em>, and <em>Anomaly Detection (AD)</em>.
-                I have served as a reviewer for ISA Transactions, Measurement Science and Technology, and other journals.
-              </p>
+                            </h1>
+                        </div>
+                        <h3>Ph.D Student</a></h3>
+                        <p>
+                            No 28 Xianning West Road, Beilin District, Xi'an Shaanxi, P.R.China, 710049<br>
+                            <br>
+                            <a
+                                href='http://iafe.xjtu.edu.cn/en/'
+                                target="_blank"
+                            >School of Mechanical Engineering</a> <br>
+                            <a
+                                href='http://en.xjtu.edu.cn/'
+                                target="_blank"
+                            >Xi'an Jiaotong University</a> <br>
+                            Email: <a
+                                href="mailto:sliu7102@163.com"
+                                target="_blank"
+                            >sliu7102@163.com </a> &nbsp; &nbsp;;
+                            <a
+                                href="mailto:lx3268181@stu.xjtu.edu.cn"
+                                target="_blank"
+                            >lx3268181@stu.xjtu.edu.cn </a> <br>
+                            <br>
+                            [<a
+                                href="https://www.zhihu.com/people/shenliu7/"
+                                target="_blank"
+                            >知乎</a>] &nbsp; &nbsp;
+                            [<a
+                                href="https://scholar.google.com/citations?hl=en&user=qKOUAFYAAAAJ"
+                                target="_blank"
+                            >Google Scholar</a>] &nbsp; &nbsp;
+                            [<a
+                                href="https://www.researchgate.net/profile/Shen-Liu-21"
+                                target="_blank"
+                            >ResearchGate</a>] &nbsp; &nbsp;
+                            [<a
+                                href="https://orcid.org/my-orcid?orcid=0000-0001-6183-1789"
+                                target="_blank"
+                            >ORCID</a>] &nbsp; &nbsp;
+                            <br>
 
-              <p>1. 2020.09 ~ Present. Studying under the supervision of <a href="https://scholar.google.com.hk/citations?hl=en&amp;user=wEGyDvkAAAAJ" target="_blank">Prof. Jinglong Chen</a> in Xi'an Jiaotong University (XJTU).</p>
-              <p>2. 2024.08 ~ Present. Visiting the <a href="http://lasar.cesnef.polimi.it/" target="_blank">LASAR lab</a> of Politecnico di Milano, Italy, advised by <a href="https://cv.hal.science/enrico-zio" target="_blank">Prof. Enrico Zio</a>.</p>
-            </td>
-            <td style="text-align:right">
-              <img src="/images/sl_scyt.jpg" border="0" width="150" alt="portrait" />
-            </td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </div>
+                        </p>
+                    </td>
+                    <td>
+                        <div style="float:right"><img
+                                src="/images/sl_scyt.jpg"
+                                border="0"
+                                width="150"
+                            ></div>
+                    </td>
+                </tr>
+                <tr>
+                </tr>
+            </tbody>
+        </table>
 
-  <!-- 切换语言脚本 -->
-  <script type="text/javascript">
-    (function() {
-      function setActive(lang) {
-        var zh = document.getElementById('panel-zh');
-        var en = document.getElementById('panel-en');
-        if (lang === 'en') {
-          zh.classList.remove('active');
-          en.classList.add('active');
-          location.hash = '#en';
-        } else {
-          en.classList.remove('active');
-          zh.classList.add('active');
-          location.hash = '#zh';
-        }
-        // 激活导航高亮（若需要）
-        var btnZh = document.getElementById('btn-zh');
-        var btnEn = document.getElementById('btn-en');
-        if (btnZh && btnEn){
-          if (lang === 'en'){ btnEn.classList.add('active'); btnZh.classList.remove('active'); }
-          else { btnZh.classList.add('active'); btnEn.classList.remove('active'); }
-        }
-      }
 
-      function initFromHash() {
-        var h = (location.hash || '#zh').toLowerCase();
-        if (h === '#en') setActive('en'); else setActive('zh');
-      }
+        <h2>Biography</h2>
+        <p>
+            I am currently a Ph.D. student with <a
+                href='http://mec.xjtu.edu.cn/'
+                target="_blank"
+            >School of Mechanical Engieering</a>, <a
+                href='https://www.xjtu.edu.cn/'
+                target="_blank"
+            >Xi'an Jiaotong University</a>, China, where I obtained my bachelor degree. My research interest mainly lies
+            in <em>Prognostics and Health Management(PHM)</em>, <em>Deep Learning(DL)</em>, <em>Fault
+                Diagnosis(FD)</em>, and </em>Anomaly Detection(AD)</em>. He has been a reviewer for ISA Transactions,
+            Measurement Science and Technology, and other journals.
+        </p>
 
-      // 给导航绑定
-      var zhBtn = document.getElementById('btn-zh');
-      var enBtn = document.getElementById('btn-en');
-      if (zhBtn) zhBtn.onclick = function(e){ e.preventDefault(); setActive('zh'); };
-      if (enBtn) enBtn.onclick = function(e){ e.preventDefault(); setActive('en'); };
 
-      initFromHash();
-      if ('onhashchange' in window) window.onhashchange = initFromHash;
-    })();
-  </script>
-</body>
-</html>
+        <p>
+            1. 2020.09 ~ Present. Studying under the supervision of Prof. <a
+                href='https://scholar.google.com.hk/citations?hl=en&user=wEGyDvkAAAAJ'
+                target="_blank"
+            >Jinglong Chen</a> in Xi'an Jiaotong University (XJTU).
+        <p>
+        <p>
+            2. 2024.08 ~ Present. Visiting studying in the <a
+                href='http://lasar.cesnef.polimi.it/'
+                target="_blank"
+            >LASAR lab</a> of Politecnico di Milano, Italy, advised by Prof. <a
+                href='https://cv.hal.science/enrico-zio'
+                target="_blank"
+            >Enrico Zio</a>
+        </p>
