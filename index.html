@@ -43,11 +43,26 @@
 
     /* 教育经历 */
     .edu-list{ margin:4px 0 0; padding:0; }
-    .edu-item{ display:flex; gap:8px; padding:6px 0; }
+    .edu-item{ display:flex; gap:12px; padding:8px 0; }
     .edu-left{ flex:1 1 auto; min-width:0; }
     .edu-right{ flex:0 0 20px; text-align:right; color:#333; font-size:14px; line-height:1; }
-    .edu-title{ position:relative; padding-left:12px; margin:0 0 0; font-size:18px; font-weight:500; color:#000; }
-    .edu-title::before{ content:"•"; position:absolute; left:0; top:0; color:#000; font-size:25px; line-height:1; }
+    .edu-title{
+    display: flex;               /* 让标题和圆点成为同一行的 flex item */
+    align-items: center;         /* 垂直居中 */
+    gap: 8px;                    /* 圆点与文字间距 */
+    margin: 0;
+    font-size: 18px;
+    font-weight: 500;
+    color: #000;
+    }
+    .edu-title::before{
+    content: "";
+    width: 6px;                  /* 圆点尺寸可按需微调：6–8px */
+    height: 6px;
+    border-radius: 50%;
+    background: #000;            /* 纯黑圆点，视觉更稳 */
+    flex: 0 0 6px;               /* 固定宽度，避免被压缩 */
+    }
     .edu-desc{ margin:0; font-size:15px; color:#222; line-height:1.8; }
     .edu-right .edu-dates{ font-size:18px; white-space:nowrap; }
     .edu-right .edu-note{ margin-top:4px; color:#555; }
@@ -136,7 +151,7 @@
           </div>
           <div class="edu-right">
             <div class="edu-dates">2016.09–2020.06</div>
-            <div class="edu-note">Percentage: 16/295</div>
+            <div class="edu-note"></div> <!-- Percentage: 16/295-->
           </div>
         </div>
 
@@ -147,18 +162,18 @@
           </div>
           <div class="edu-right">
             <div class="edu-dates">2020.09–2022.03</div>
-            <div class="edu-note">Percentage: 12/292</div>
+            <div class="edu-note"></div>  <!-- Percentage: 12/292-->
           </div>
         </div>
 
         <div class="edu-item">
           <div class="edu-left">
             <h3 class="edu-title">米兰理工大学 —— 风险分析与安全可靠性中心</h3>
-            <p class="edu-desc">联合培养博士研究生。机械工程。研究方向：故障预测与健康管理</p>
+            <p class="edu-desc">联合培养博士研究生。机械工程。合作导师：Prof. Enrico Zio，研究方向：故障预测与健康管理</p>
           </div>
           <div class="edu-right">
             <div class="edu-dates">2024.08–2025.08</div>
-            <div class="edu-note">CSC 项目，联合培养导师：Enrico Zio 教授</div>
+            <div class="edu-note"></div>
           </div>
         </div>
 
@@ -169,7 +184,7 @@
           </div>
           <div class="edu-right">
             <div class="edu-dates">2020.03–2025.12</div>
-            <div class="edu-note">已发表 SCI 论文 7 篇</div>
+            <div class="edu-note"> </div>
           </div>
         </div>
       </div>
@@ -236,45 +251,167 @@
     </div>
   </div>
 
+
+
+
+
+
+
+
+
+
+
+
   <!-- English page -->
   <div id="en-page" style="display:none;">
     <div id="layout-content">
       <table><tbody><tr>
         <td width="1680">
-          <div id="toptitle"><h1>Shen Liu &nbsp;&nbsp; 刘莘</h1></div>
+          <div id="toptitle"><h1>Shen Liu</h1></div>
           <h3>Ph.D Student</h3>
           <p>
-            No 28 Xianning West Road, Beilin District, Xi'an Shaanxi, P.R.China, 710049<br /><br />
-            <a href="http://iafe.xjtu.edu.cn/en/" target="_blank">School of Mechanical Engineering</a><br />
-            <a href="http://en.xjtu.edu.cn/" target="_blank">Xi'an Jiaotong University</a><br />
+            <a href="http://en.xjtu.edu.cn/" target="_blank">Xi'an Jiaotong University</a>，
+            <a href="http://iafe.xjtu.edu.cn/en/" target="_blank">Mechanical Engineering School</a>，
+            <a href="https://mec.xjtu.edu.cn/info/1064/9594.htm" target="_blank">装备智能诊断与控制研究所</a>，
+            中国陕西省西安市碑林区咸宁西路28号，710049。<br />
             Email:
             <a href="mailto:sliu7102@163.com" target="_blank">sliu7102@163.com</a>&nbsp;&nbsp;
             <a href="mailto:lx3268181@stu.xjtu.edu.cn" target="_blank">lx3268181@stu.xjtu.edu.cn</a>
             <br /><br />
-            [<a href="https://www.zhihu.com/people/shenliu7/" target="_blank">知乎</a>]
-            &nbsp;&nbsp;[<a href="https://scholar.google.com/citations?hl=en&user=qKOUAFYAAAAJ" target="_blank">Google Scholar</a>]
+            [<a href="https://scholar.google.com/citations?hl=zh-CN&user=qKOUAFYAAAAJ" target="_blank">Google Scholar</a>]
             &nbsp;&nbsp;[<a href="https://www.researchgate.net/profile/Shen-Liu-21" target="_blank">ResearchGate</a>]
             &nbsp;&nbsp;[<a href="https://orcid.org/my-orcid?orcid=0000-0001-6183-1789" target="_blank">ORCID</a>]
+            &nbsp;&nbsp;[<a href="https://www.zhihu.com/people/shenliu7/" target="_blank">Zhihu</a>]
           </p>
         </td>
         <td><div style="float:right"><img src="/images/sl_scyt.jpg" width="150" alt="Shen Liu portrait" /></div></td>
       </tr></tbody></table>
 
-      <h2>Biography</h2>
+      <h2>个人简介</h2>
       <p>
-        I am currently a Ph.D. student with the
-        <a href="http://mec.xjtu.edu.cn/" target="_blank">School of Mechanical Engineering</a>,
-        <a href="https://www.xjtu.edu.cn/" target="_blank">Xi'an Jiaotong University</a>, China, where I obtained my bachelor degree.
-        My research interest mainly lies in <em>Prognostics and Health Management (PHM)</em>, <em>Deep Learning (DL)</em>,
-        <em>Fault Diagnosis (FD)</em>, and <em>Anomaly Detection (AD)</em>. I have been a reviewer for ISA Transactions,
-        Measurement Science and Technology, and other journals.
+        I am currently a Ph.D. student in <a href="http://mec.xjtu.edu.cn/" target="_blank">the School of Mechanical Engineering, Xi'an Jiaotong University, China</a>.
+        My research interest mainly lies in <em>Prognostics and Health Management(PHM)</em>、<em>Fault Diagnosis(FD)</em> 与 <em>Anomaly Detection(AD)</em>。
+        I have been a reviewer for ISA Transactions and other journals.
       </p>
-      <p>1. 2020.09 ~ Present. Studying under the supervision of <a href="https://scholar.google.com.hk/citations?hl=en&user=wEGyDvkAAAAJ" target="_blank">Prof. Jinglong Chen</a> in Xi'an Jiaotong University (XJTU).</p>
-      <p>2. 2024.08 ~ Present. Visiting studying in the <a href="http://lasar.cesnef.polimi.it/" target="_blank">LASAR lab</a> of Politecnico di Milano, Italy, advised by <a href="https://cv.hal.science/enrico-zio" target="_blank">Prof. Enrico Zio</a>.</p>
+
+      <!-- 教育经历 -->
+      <h2>Education</h2>
+      <div class="edu-list">
+        <div class="edu-item">
+          <div class="edu-left">
+            <h3 class="edu-title">Xi'an Jiaotong University —— Mechanical Engineering School</h3>
+            <p class="edu-desc">Bachelor of Engineering. Mechanical Engineering.</p>
+          </div>
+          <div class="edu-right">
+            <div class="edu-dates">2016.09–2020.06</div>
+            <div class="edu-note"></div>  <!-- Percentage: 16/295 -->
+          </div>
+        </div>
+
+        <div class="edu-item">
+          <div class="edu-left">
+            <h3 class="edu-title">Xi'an Jiaotong University —— Mechanical Engineering School</h3>
+            <p class="edu-desc">Master's degree candidate. Mechanical Engineering. Research Areas: Intelligent Manufacturing, Big Data Analytics, and Quality Control</p>
+          </div>
+          <div class="edu-right">
+            <div class="edu-dates">2020.09–2022.03</div>
+            <div class="edu-note"></div> <!-- Percentage: 12/292 -->
+          </div>
+        </div>
+
+        <div class="edu-item">
+          <div class="edu-left">
+            <h3 class="edu-title">Politecnico di Milano, Italy —— the Laboratory of Analysis of Systems for the Assessment of Reliability, Risk and Resilience (LASAR3)</h3>
+            <p class="edu-desc">Visiting Ph.D Student, Mechanical Engineering. Co-superviser: Prof. Enrico Zio, Research Areas: Prognostics and Health Management.</p>
+          </div>
+          <div class="edu-right">
+            <div class="edu-dates">2024.08–2025.08</div>
+            <div class="edu-note"></div>
+          </div>
+        </div>
+
+        <div class="edu-item">
+          <div class="edu-left">
+            <h3 class="edu-title">Xi'an Jiaotong University —— Mechanical Engineering School</h3>
+            <p class="edu-desc">Doctoral Candidate. Mechanical Engineering. Research Areas: Intelligent Manufacturing, Big Data Analytics, and Quality Control</p>
+          </div>
+          <div class="edu-right">
+            <div class="edu-dates">2020.03–2025.12</div>
+            <div class="edu-note"> </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 成果 -->
+      <h2>Publication</h2>
+      <ol class="result-list">
+        <li class="result-item">
+          Liu S, Chen JL, Liu ZJ, et al. Graph embedded patch-sense autoencoder with prior knowledge for multi-component system anomaly detection[J].
+          <em>Reliability Engineering &amp; System Safety</em>, 2025, 256: 110784.
+          (SCI；IF=11；<strong>中科院一区Top</strong>)(合作教授：加拿大不列颠哥伦比亚大学，电子与计算机工程系 Jane Z. Wang 教授(加拿大工程院院士、IEEE Fellow))
+        </li>
+        <li class="result-item">
+          Liu S, Chen JL, Shi Z, et al. Representations aligned counterfactual domain learning for open-set fault diagnosis under speed transient conditions[J].
+          <em>Knowledge-Based Systems</em>, 2025, 310: 112932.
+          (SCI；IF=7.6；<strong>中科院一区Top</strong>)
+        </li>
+        <li class="result-item">
+          Liu S, Chen JL, Feng Y, et al. Generative artificial intelligence and data augmentation for prognostic and health management: Taxonomy, progress, and prospects[J].
+          <em>Expert Systems with Applications</em>, 2024, 255: 124511.
+          (SCI；IF=7.5；<strong>中科院一区Top</strong>)
+        </li>
+        <li class="result-item">
+          Liu S, Chen JL, He SL, et al. Few-shot learning under domain shift: Attentional contrastive calibrated transformer of time series for fault diagnosis under sharp speed variation[J].
+          <em>Mechanical Systems and Signal Processing</em>, 2023, 189: 110071.
+          (SCI；IF=8.9；<strong>中科院一区Top</strong>)
+        </li>
+        <li class="result-item">
+          Liu S, Chen JL, He SL, et al. Intelligent fault diagnosis under small sample size conditions via Bidirectional InfoMax GAN with unsupervised representation learning[J].
+          <em>Knowledge-Based Systems</em>, 2021, 232: 107488.
+          (SCI；IF=7.6；<strong>中科院一区Top</strong>)
+        </li>
+        <li class="result-item">
+          Liu S, Chen JL, He SL, et al. Subspace Network with Shared Representation learning for intelligent fault diagnosis of machine under speed transient conditions with few samples[J].
+          <em>ISA Transactions</em>, 2022, 128: 531-544.
+          (SCI；IF=6.5；<strong>中科院二区Top</strong>)
+        </li>
+        <li class="result-item">
+          Liu S, Chen JL, Qu C, et al. LOSGAN: latent optimized stable GAN for intelligent fault diagnosis with limited data in rotating machinery[J].
+          <em>Measurement Science and Technology</em>, 2021, 32(4): 045101.
+          (SCI；IF=3.4；中科院三区)
+        </li>
+        <li class="result-item">
+          刘莘，王珺，陈景龙等．基于多源数据密度估计自编码器的液体火箭发动机无监督异常检测[J].
+          <em>机械工程学报</em>, 2025, 61(02): 36-45. (EI)
+        </li>
+        <li class="result-item">
+          陈景龙，刘莘，宋霄罡，訾艳阳．一种小样本下隐式激励对抗训练的机械故障智能诊断方法[P]. CN202011121236.2. (专利；已授权)
+        </li>
+      </ol>
+
+
+      <!-- 奖励与荣誉 -->
+      <h2>Awards and Honors</h2>
+      <!-- <div class="award-list"> -->
+        <div class="award-item"><div class="award-left"><strong>国家奖学金</strong></div><div class="award-right">2025</div></div>
+        <div class="award-item"><div class="award-left"><strong>广西科学技术发明奖二等奖</strong> 复杂装备故障特征自主挖掘与跨域溯源技术及应用。排第 6</div><div class="award-right">2025</div></div>
+        <div class="award-item"><div class="award-left">“<strong>互联网+</strong>”<strong>大学生创新创业大赛省级一等奖</strong> 中国国际“互联网+”大学生创新创业大赛省级一等奖（金奖），排第 3</div><div class="award-right">2025</div></div>
+        <div class="award-item"><div class="award-left"><strong>西安交通大学学业奖学金</strong> 一等奖</div><div class="award-right">2024</div></div>
+        <div class="award-item"><div class="award-left"><strong>CSC 联合培养奖学金</strong> 意大利米兰理工大学联合培养项目</div><div class="award-right">2023</div></div>
+        <div class="award-item"><div class="award-left"><strong>中国机器人大赛</strong> 工程类竞技机器人，排第 2</div><div class="award-right">2019</div></div>
+        <div class="award-item"><div class="award-left"><strong>全国大学生机械产品数字化设计大赛</strong> 全国一等奖，排第 2</div><div class="award-right">2019</div></div>
+      </div>
     </div>
   </div>
 
-  
+
+
+
+
+
+
+
+
   <!-- Other page (blank) -->
   <div id="other-page" style="display:none;">
     <div id="layout-content">
